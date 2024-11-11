@@ -6,9 +6,9 @@ In this terminal screenshot, the students username is : s21b30
 
 
 Here is how the generated latex record for the Database Management Lab subject looks like.
-<img src="<img src="https://github.com/lroe/Automatic-Lab-Latex-Builder/blob/main/3.png">
+<img src="<img src="[https://github.com/lroe/Automatic-Lab-Latex-Builder/blob/main/3.png](https://github.com/lroe/Automatic-Lab-Latex-Builder/blob/master/3.png)">
 
-(Here termina username is "postgres")
+(Here terminal username is "postgres")
 
 # To run
 1)inside test.py, set old_substring = "s21b30" and new_substring ={your _username}
