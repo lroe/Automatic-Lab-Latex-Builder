@@ -1,0 +1,18 @@
+s21b30=>SELECT SubjectName
+FROM SUBJECTS
+WHERE SubjectName LIKE '%a%';
+
+
+ 
+ 
+         subjectname         
+-----------------------------
+ Calculus I
+ Introduction to Programming
+ Linear Algebra
+ Classical Mechanics
+ Data Structures
+(5 rows)
+
+
+

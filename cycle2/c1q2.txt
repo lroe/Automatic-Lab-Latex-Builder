@@ -1,0 +1,11 @@
+s21b30=>SELECT * FROM FACULTY
+WHERE EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM Tenured) > 5;
+
+ 
+ staffid |        title        |   status    |  tenured   
+---------+---------------------+-------------+------------
+       6 | Lecturer            | Non-Tenured | 2017-08-10
+       7 | Professor           | Tenured     | 2016-11-25
+       8 | Associate Professor | Tenured     | 2015-05-18
+(3 rows)
+

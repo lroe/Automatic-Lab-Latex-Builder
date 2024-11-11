@@ -1,0 +1,17 @@
+s21b30=>
+    SELECT * FROM STAFF
+WHERE Salary > 10000 AND Salary < 50000;
+
+    
+ 
+ staffid | stffirstname | stflastname | stfstreetaddress | stfcity |  stfstate   | stizipcode | stfareacode | stfphonenumber | datehired  |  salary  |      position       
+---------+--------------+-------------+------------------+---------+-------------+------------+-------------+----------------+------------+----------+---------------------
+       4 | Mary         | Johnson     | 567 Pine St      | Mumbai  | Maharashtra |     400001 |          22 | 9876541230     | 2019-03-25 | 32000.00 | Associate Professor
+       5 | Robert       | Williams    | 890 Oak St       | Delhi   | Delhi       |     110001 |          11 | 1231231230     | 2020-06-12 | 28000.00 | Assistant Professor
+       6 | David        | Brown       | 123 Cedar St     | Pune    | Maharashtra |     411001 |          20 | 5558887777     | 2018-02-10 | 26000.00 | Lecturer
+       7 | Jennifer     | Lee         | 456 Birch St     | Kolkata | West Bengal |     700001 |          33 | 3335558888     | 2017-09-15 | 29000.00 | Professor
+       8 | Michael      | Garcia      | 789 Elm St       | Chennai | Tamil Nadu  |     600001 |          44 | 9999999999     | 2016-12-03 | 34000.00 | Associate Professor
+(5 rows)
+
+
+

@@ -1,0 +1,38 @@
+s21b30=>SELECT StudFirstName, StudLastName
+FROM STUDENTS
+WHERE StudPhoneNumber LIKE '95%';
+
+
+
+ 
+ 
+ studfirstname | studlastname 
+---------------+--------------
+(0 rows)
+
+
+
+s21b30=>INSERT INTO STUDENTS (StudentID, StudFirstName, StudLastName, StudPhoneNumber)
+VALUES
+  (9, 'John', 'Doe', '9512345678');
+
+ 
+INSERT 0 1
+
+
+s21b30=>
+
+SELECT StudFirstName, StudLastName
+FROM STUDENTS
+WHERE StudPhoneNumber LIKE '95%';
+
+
+ 
+ 
+ studfirstname | studlastname 
+---------------+--------------
+ John          | Doe
+(1 row)
+
+
+

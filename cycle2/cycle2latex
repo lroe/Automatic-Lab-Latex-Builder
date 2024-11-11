@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{eso-pic}
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily,
+    breaklines=true,
+    showstringspaces=false,
+}
+
+
+\geometry{margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\thepage}
+
+% Define standard border
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \put(40,40){\framebox(\paperwidth-80,\paperheight-80){}}%
+  }%
+}
+
+\begin{document}
+
+\section*{Question 1: Insert data in the created database.}
+\begin{lstlisting}
+INSERT INTO STAFF (StaffID, StfFirstName, StfLastName, StfStreetAddress, StfCity, StfState, StiZipCode, StfAreaCode, StfPhoneNumber, DateHired, Salary, Position)
+    VALUES (4, 'Mary', 'Johnson', '567 Pine St', 'Mumbai', 'Maharashtra', 400001, 22, '9876541230', '2019-03-25', 32000.00, 'Associate Professor');
+
+INSERT INTO STAFF (StaffID, StfFirstName, StfLastName, StfStreetAddress, StfCity, StfState, StiZipCode, StfAreaCode, StfPhoneNumber, DateHired, Salary, Position)
+    VALUES (5, 'Robert', 'Williams', '890 Oak St', 'Delhi', 'Delhi', 110001, 11, '1231231230', '2020-06-12', 28000.00, 'Assistant Professor');
+
+INSERT INTO STAFF (StaffID, StfFirstName, StfLastName, StfStreetAddress, StfCity, StfState, StiZipCode, StfAreaCode, StfPhoneNumber, DateHired, Salary, Position)
+    VALUES (6, 'David', 'Brown', '123 Cedar St', 'Pune', 'Maharashtra', 411001, 20, '5558887777', '2018-02-10', 26000.00, 'Lecturer');
+
+INSERT INTO STAFF (StaffID, StfFirstName, StfLastName, StfStreetAddress, StfCity, StfState, StiZipCode, StfAreaCode, StfPhoneNumber, DateHired, Salary, Position)
+    VALUES (7, 'Jennifer', 'Lee', '456 Birch St', 'Kolkata', 'West Bengal', 700001, 33, '3335558888', '2017-09-15', 29000.00, 'Professor');
+
+INSERT INTO STAFF (StaffID, StfFirstName, StfLastName, StfStreetAddress, StfCity, StfState, StiZipCode, StfAreaCode, StfPhoneNumber, DateHired, Salary, Position)
+    VALUES (8, 'Michael', 'Garcia', '789 Elm St', 'Chennai', 'Tamil Nadu', 600001, 44, '9999999999', '2016-12-03', 34000.00, 'Associate Professor');
+
+INSERT INTO FACULTY (StaffID, Title, Status, Tenured)
+    VALUES (4, 'Associate Professor', 'Tenured', '2018-03-15');
+
+INSERT INTO FACULTY (StaffID, Title, Status, Tenured)
+    VALUES (5, 'Assistant Professor', 'Non-Tenured', '2020-04-22');
+
+INSERT INTO FACULTY (StaffID, Title, Status, Tenured)
+    VALUES (6, 'Lecturer', 'Non-Tenured', '2017-08-10');
+
+INSERT INTO FACULTY (StaffID, Title, Status, Tenured)
+    VALUES (7, 'Professor', 'Tenured', '2016-11-25');
+
+INSERT INTO FACULTY (StaffID, Title, Status, Tenured)
+    VALUES (8, 'Associate Professor', 'Tenured', '2015-05-18');
+
+INSERT INTO CATEGORIES (CategoryID, CategoryDescription, DepartmentID)
+    VALUES (4, 'Mathematics', 101);
+
+INSERT INTO CATEGORIES (CategoryID, CategoryDescription, DepartmentID)
+    VALUES (5, 'Computer Science', 102);
+
+INSERT INTO CATEGORIES (CategoryID, CategoryDescription, DepartmentID)
+    VALUES (6, 'Physics', 103);
+
+INSERT INTO CATEGORIES (CategoryID, CategoryDescription, DepartmentID)
+    VALUES (7, 'History', 104);
+
+INSERT INTO CATEGORIES (CategoryID, CategoryDescription, DepartmentID)
+    VALUES (8, 'Biology', 105);
+
+INSERT INTO SUBJECTS (SubjectID, CategoryID, SubjectCode, SubjectName, SubjectDescription)
+    VALUES (4, 4, 'MATH101', 'Calculus I', 'Introduction to calculus');
+
+INSERT INTO SUBJECTS (SubjectID, CategoryID, SubjectCode, SubjectName, SubjectDescription)
+    VALUES (5, 5, 'CS101', 'Introduction to Programming', 'Programming fundamentals');
+
+INSERT INTO SUBJECTS (SubjectID, CategoryID, SubjectCode, SubjectName, SubjectDescription)
+    VALUES (6, 4, 'MATH201', 'Linear Algebra', 'Vector spaces and matrices');
+
+INSERT INTO SUBJECTS (SubjectID, CategoryID, SubjectCode, SubjectName, SubjectDescription)
+    VALUES (7, 6, 'PHYS101', 'Classical Mechanics', 'Newtonian mechanics');
+
+INSERT INTO SUBJECTS (SubjectID, CategoryID, SubjectCode, SubjectName, SubjectDescription)
+    VALUES (8, 5, 'CS202', 'Data Structures', 'Data structures and algorithms');
+
+INSERT INTO BUILDINGS (BuildingCode, BuildingName, NumberOfFloors)
+    VALUES (2, 'Science Building', 5);
+
+INSERT INTO BUILDINGS (BuildingCode, BuildingName, NumberOfFloors)
+    VALUES (3, 'Engineering Building', 6);
+
+INSERT INTO BUILDINGS (BuildingCode, BuildingName, NumberOfFloors)
+    VALUES (4, 'Library', 3);
+
+INSERT INTO BUILDINGS (BuildingCode, BuildingName, NumberOfFloors)
+    VALUES (5, 'Arts Building', 4);
+
+INSERT INTO BUILDINGS (BuildingCode, BuildingName, NumberOfFloors)
+    VALUES (6, 'Administration Building', 4);
+
+INSERT INTO CLASSROOMS (ClassRoomID, BuildingCode, PhoneAvailable)
+    VALUES (11, 2, 'Yes');
+
+INSERT INTO CLASSROOMS (ClassRoomID, BuildingCode, PhoneAvailable)
+    VALUES (12, 3, 'No');
+
+INSERT INTO CLASSROOMS (ClassRoomID, BuildingCode, PhoneAvailable)
+    VALUES (13, 4, 'Yes');
+
+INSERT INTO CLASSROOMS (ClassRoomID, BuildingCode, PhoneAvailable)
+    VALUES (14, 5, 'No');
+
+INSERT INTO CLASSROOMS (ClassRoomID, BuildingCode, PhoneAvailable)
+    VALUES (15, 6, 'Yes');
+
+INSERT INTO CLASSES (ClassID, SubjectID, ClassRoomID, StartTime, Duration)
+    VALUES (21, 4, 11, '08:00:00', 90);
+
+INSERT INTO CLASSES (ClassID, SubjectID, ClassRoomID, StartTime, Duration)
+    VALUES (22, 5, 12, '09:30:00', 120);
+
+INSERT INTO CLASSES (ClassID, SubjectID, ClassRoomID, StartTime, Duration)
+    VALUES (23, 6, 13, '10:00:00', 90);
+
+INSERT INTO CLASSES (ClassID, SubjectID, ClassRoomID, StartTime, Duration)
+    VALUES (24, 7, 14, '11:00:00', 120);
+
+INSERT INTO CLASSES (ClassID, SubjectID, ClassRoomID, StartTime, Duration)
+    VALUES (25, 8, 15, '13:30:00', 90);
+
+INSERT INTO STUDENTS (StudentID, StudFirstName, StudLastName, StudStreetAddress, StudCity, StudState, StudZipCode, StudAreaCode, StudPhoneNumber)
+    VALUES (101, 'Sophia', 'Brown', '123 Oak St', 'Mumbai', 'Maharashtra', 400001, 22, '9876541111');
+
+INSERT INTO STUDENTS (StudentID, StudFirstName, StudLastName, StudStreetAddress, StudCity, StudState, StudZipCode, StudAreaCode, StudPhoneNumber)
+    VALUES (102, 'Liam', 'Smith', '456 Maple St', 'Bangalore', 'Karnataka', 560001, 80, '9876542222');
+
+INSERT INTO STUDENTS (StudentID, StudFirstName, StudLastName, StudStreetAddress, StudCity, StudState, StudZipCode, StudAreaCode, StudPhoneNumber)
+    VALUES (103, 'Olivia', 'Lee', '789 Pine St', 'Hyderabad', 'Telangana', 500001, 40, '9876543333');
+
+INSERT INTO STUDENTS (StudentID, StudFirstName, StudLastName, StudStreetAddress, StudCity, StudState, StudZipCode, StudAreaCode, StudPhoneNumber)
+    VALUES (104, 'Noah', 'Wilson', '456 Elm St', 'Delhi', 'Delhi', 110001, 11, '9876544444');
+
+INSERT INTO STUDENTS (StudentID, StudFirstName, StudLastName, StudStreetAddress, StudCity, StudState, StudZipCode, StudAreaCode, StudPhoneNumber)
+    VALUES (105, 'Emma', 'Garcia', '123 Cedar St', 'Pune', 'Maharashtra', 411001, 20, '9876545555');
+
+
+% Continue with the rest of the INSERT statements...
+\end{lstlisting}
+
+\vspace{10pt} % Add some space between questions
+
+\section*{Question 2: Display the list of faculties who have more than 5 years of tenure period.}
+\begin{lstlisting}
+SELECT * FROM FACULTY
+WHERE EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM Tenured) > 5;
+
+\end{lstlisting}
+
+\vspace{10pt} % Add some space between questions
+
+\section*{Question 3: Calculate the remaining tenure period from the current date.}
+\begin{lstlisting}
+SELECT StaffID, Title, Status, Tenured,
+       EXTRACT(YEAR FROM AGE(Tenured)) * 12 + EXTRACT(MONTH FROM AGE(Tenured)) AS RemainingTenureMonths
+FROM FACULTY;
+\end{lstlisting}
+
+\vspace{10pt} % Add some space between questions
+
+\section*{Question 4: Display the list of staff who have salary greater than 10000 and less than
+50000.}
+\begin{lstlisting}
+ SELECT * FROM STAFF
+WHERE Salary > 10000 AND Salary < 50000;
+
+\end{lstlisting}
+
+\vspace{10pt} % Add some space between questions
+
+\section*{Question 5: Count the no: of positions in the staff relation.}
+\begin{lstlisting}
+ SELECT COUNT(DISTINCT Position) AS NumberOfPositions FROM STAFF;
+
+\end{lstlisting}
+
+\vspace{10pt} % Add some space between questions
+
+\section*{Question 6: Count the no: of staff from a particular area code.}
+\begin{lstlisting}
+ SELECT COUNT(*) AS NumberOfStaff FROM STAFF
+WHERE StfAreaCode = 20;
+
+\end{lstlisting}
+% Repeat the same structure for other questions...
+
+\end{document}
+

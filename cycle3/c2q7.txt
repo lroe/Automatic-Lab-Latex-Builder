@@ -1,0 +1,30 @@
+s21b30=>SELECT
+    s.StudentID,
+    s.StudFirstName,
+    s.StudLastName,
+    sub.SubjectName
+FROM
+    STUDENTS s
+JOIN
+    STUDENTSCHEDULES ss ON s.StudentID = ss.StudentID
+JOIN
+    CLASSES c ON ss.ClassID = c.ClassID
+JOIN
+    SUBJECTS sub ON c.SubjectID = sub.SubjectID
+ORDER BY
+    sub.SubjectName,
+    s.StudentID ASC,
+    s.StudLastName DESC;
+
+
+ 
+ studentid | studfirstname | studlastname |         subjectname         
+-----------+---------------+--------------+-----------------------------
+       101 | Sophia        | Brown        | Calculus I
+       102 | Liam          | Smith        | Calculus I
+       101 | Sophia        | Brown        | Introduction to Programming
+       102 | Liam          | Smith        | Introduction to Programming
+(4 rows)
+
+
+

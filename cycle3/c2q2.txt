@@ -1,0 +1,21 @@
+s21b30=>
+ SELECT Position, MAX(AverageSalary) AS MaxAverageSalary
+FROM (
+    SELECT Position, AVG(Salary) AS AverageSalary
+    FROM STAFF
+    GROUP BY Position
+) AS Subquery
+GROUP BY Position;
+
+ 
+ 
+      position       |  maxaveragesalary  
+---------------------+--------------------
+ Associate Professor | 33000.000000000000
+ Lecturer            | 26000.000000000000
+ Assistant Professor | 28000.000000000000
+ Professor           | 29000.000000000000
+(4 rows)
+
+
+

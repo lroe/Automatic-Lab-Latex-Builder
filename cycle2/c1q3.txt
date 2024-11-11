@@ -1,0 +1,20 @@
+s21b30=>
+    SELECT StaffID, Title, Status, Tenured,
+       EXTRACT(YEAR FROM AGE(Tenured)) * 12 + EXTRACT(MONTH FROM AGE(Tenured)) AS RemainingTenureMonths
+FROM FACULTY;
+    
+ 
+ staffid |        title        |   status    |  tenured   | remainingtenuremonths 
+---------+---------------------+-------------+------------+-----------------------
+       4 | Associate Professor | Tenured     | 2018-03-15 |                    67
+       5 | Assistant Professor | Non-Tenured | 2020-04-22 |                    42
+       6 | Lecturer            | Non-Tenured | 2017-08-10 |                    74
+       7 | Professor           | Tenured     | 2016-11-25 |                    83
+       8 | Associate Professor | Tenured     | 2015-05-18 |                   101
+       1 | Professor           | Active      | 2010-01-01 |                   166
+       2 | Associate Professor | Active      | 2011-05-15 |                   149
+       3 | Assistant Professor | Active      | 2012-08-20 |                   134
+(8 rows)
+
+
+

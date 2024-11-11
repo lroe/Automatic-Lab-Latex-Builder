@@ -1,0 +1,37 @@
+s21b30=>SELECT ClassID, MAX(Duration) AS MaxDuration
+FROM CLASSES
+GROUP BY ClassID
+HAVING MAX(Duration) < 45;
+
+
+ 
+ 
+ classid | maxduration 
+---------+-------------
+(0 rows)
+
+
+s21b30=>INSERT INTO CLASSES (ClassID, Duration) VALUES
+  (26, 41),
+  (27, 30),
+  (28, 50);
+
+ 
+ 
+INSERT 0 3
+
+
+s21b30=> SELECT ClassID, MAX(Duration) AS MaxDuration
+FROM CLASSES
+GROUP BY ClassID
+HAVING MAX(Duration) < 45;
+
+ 
+ classid | maxduration 
+---------+-------------
+      27 |          30
+      26 |          41
+(2 rows)
+
+
+

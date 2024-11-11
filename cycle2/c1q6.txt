@@ -1,0 +1,14 @@
+s21b30=>
+    SELECT COUNT(*) AS NumberOfStaff FROM STAFF
+WHERE StfAreaCode = 20;
+
+
+    
+ 
+ numberofstaff 
+---------------
+             1
+(1 row)
+
+
+

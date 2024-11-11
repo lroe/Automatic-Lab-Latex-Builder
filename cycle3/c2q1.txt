@@ -1,0 +1,53 @@
+s21b30=>
+    SELECT StaffID, COUNT(DISTINCT SubjectID) AS NumberOfSubjects
+FROM FACULTYSUBJECTS
+GROUP BY StaffID
+HAVING COUNT(DISTINCT SubjectID) IN (2, 3);
+
+
+
+    
+ 
+ staffid | numberofsubjects 
+---------+------------------
+(0 rows)
+
+
+s21b30=>
+    INSERT INTO FACULTYSUBJECTS (StaffID, SubjectID, ProficiencyRating)
+VALUES
+  (4, 4, 4.5),
+  (4, 5, 3.8);
+
+
+
+
+    
+ 
+INSERT 0 2
+
+
+s21b30=>INSERT INTO FACULTYSUBJECTS (StaffID, SubjectID, ProficiencyRating)
+VALUES
+  (5, 6, 4.2),
+  (5, 7, 3.9),
+  (5, 8, 4.1);
+ 
+ 
+INSERT 0 3
+
+
+s21b30=>SELECT StaffID, COUNT(DISTINCT SubjectID) AS NumberOfSubjects
+FROM FACULTYSUBJECTS
+GROUP BY StaffID
+HAVING COUNT(DISTINCT SubjectID) IN (2, 3);
+ 
+ 
+ staffid | numberofsubjects 
+---------+------------------
+       4 |                2
+       5 |                3
+(2 rows)
+
+
+

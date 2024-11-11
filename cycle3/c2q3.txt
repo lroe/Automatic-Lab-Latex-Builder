@@ -1,0 +1,59 @@
+s21b30=>
+SELECT
+    c.SubjectID,
+    c.ClassID,
+    MIN(s.Grade) AS MinGrade
+FROM
+    STUDENTSCHEDULES s
+JOIN
+    CLASSES c ON s.ClassID = c.ClassID
+GROUP BY
+    c.SubjectID, c.ClassID;
+
+
+ 
+ 
+ subjectid | classid | mingrade 
+-----------+---------+----------
+(0 rows)
+
+
+s21b30=>INSERT INTO STUDENT_CLASS_STATUS (ClassStatus, ClassDescription) VALUES
+  ('Pass', 'Passed'),
+  ('Fail', 'Failed');
+ 
+INSERT 0 2
+
+
+s21b30=> INSERT INTO STUDENTSCHEDULES (ClassID, StudentID, ClassStatus, Grade) VALUES
+  (21, 101, 'Pass', 'A'),
+  (21, 102, 'Fail', 'C'),
+  (22, 101, 'Pass', 'B'),
+  (22, 102, 'Pass', 'A'); 
+ 
+INSERT 0 4
+
+
+s21b30=>
+SELECT
+    c.SubjectID,
+    c.ClassID,
+    MIN(s.Grade) AS MinGrade
+FROM
+    STUDENTSCHEDULES s
+JOIN
+    CLASSES c ON s.ClassID = c.ClassID
+GROUP BY
+    c.SubjectID, c.ClassID;
+
+
+ 
+ 
+ subjectid | classid | mingrade 
+-----------+---------+----------
+         5 |      22 | A
+         4 |      21 | A
+(2 rows)
+
+
+

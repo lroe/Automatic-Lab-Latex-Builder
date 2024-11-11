@@ -1,0 +1,12 @@
+s21b30=>
+    SELECT COUNT(DISTINCT Position) AS NumberOfPositions FROM STAFF;
+
+    
+ 
+ numberofpositions 
+-------------------
+                 4
+(1 row)
+
+
+

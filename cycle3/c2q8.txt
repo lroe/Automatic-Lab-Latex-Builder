@@ -1,0 +1,60 @@
+s21b30=>SELECT
+    Position,
+    AVG(Salary) AS AverageSalary
+FROM
+    STAFF
+WHERE
+    (StfState = 'Kerala' OR StfState = 'Tamil Nadu')
+    AND Salary > 10000
+GROUP BY
+    Position
+HAVING
+    AVG(Salary) < 25000;
+
+
+
+ 
+ position | averagesalary 
+----------+---------------
+(0 rows)
+
+
+
+s21b30=>-- Insert data into STAFF table
+INSERT INTO STAFF (StaffID, StfFirstName, StfLastName, StfState, Salary, Position)
+VALUES
+  (11, 'John', 'Doe', 'Kerala', 12000, 'Manager'),
+  (12, 'Jane', 'Smith', 'Tamil Nadu', 15000, 'Developer'),
+  (13, 'Bob', 'Johnson', 'Kerala', 18000, 'Analyst'),
+  (14, 'Alice', 'Williams', 'Tamil Nadu', 11000, 'Manager');
+
+
+
+
+ 
+INSERT 0 4
+
+
+s21b30=>SELECT
+    Position,
+    AVG(Salary) AS AverageSalary
+FROM
+    STAFF
+WHERE
+    (StfState = 'Kerala' OR StfState = 'Tamil Nadu')
+    AND Salary > 10000
+GROUP BY
+    Position
+HAVING
+    AVG(Salary) < 25000;
+
+ 
+ position  |     averagesalary      
+-----------+------------------------
+ Analyst   | 18000.0000000000000000
+ Developer | 15000.0000000000000000
+ Manager   | 11500.0000000000000000
+(3 rows)
+
+
+
